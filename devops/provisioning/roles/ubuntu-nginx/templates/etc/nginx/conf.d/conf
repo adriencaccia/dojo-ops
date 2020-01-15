@@ -1,0 +1,18 @@
+map $sent_http_content_type $expires {
+    "text/html"                 epoch;
+    "text/html; charset=utf-8"  epoch;
+    default                     off;
+}
+
+server {
+    listen 80;
+
+    listen [::]:80;
+
+    root /var/www/html;
+    index index.html;
+
+    location / {
+            try_files $uri /index.html;
+    }
+}

@@ -1,0 +1,2 @@
+[prod]
+54.194.207.57 ansible_ssh_user=ubuntu

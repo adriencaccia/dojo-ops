@@ -1,0 +1,16 @@
+---
+- name: Provisioning
+  hosts: all
+  become: true
+  tasks:
+    - name: install python 2
+      raw: sudo bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal)"
+    - name: create www-data shell
+      user: name=www-data shell=/bin/bash home=/var/www
+    - name: set correct permissions for ssh dir
+      file: path=/var/www/.ssh owner=www-data group=www-data mode=0700 state=directory
+
+- hosts: prod
+  become: true
+  roles:
+    - ubuntu-nginx
