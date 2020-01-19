@@ -9,7 +9,7 @@ server {
 
     listen [::]:80;
 
-    root /var/www/html;
+    root /var/www/dojo-ops/current/build;
     index index.html;
 
     location / {

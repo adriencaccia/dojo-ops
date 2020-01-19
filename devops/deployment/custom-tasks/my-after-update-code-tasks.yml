@@ -1,0 +1,10 @@
+---
+- name: install dependencies
+  command: npm install
+  args:
+    chdir: "{{ ansistrano_release_path.stdout }}"
+
+- name: build the application
+  command: npm run build
+  args:
+    chdir: "{{ ansistrano_release_path.stdout }}"

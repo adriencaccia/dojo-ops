@@ -11,6 +11,13 @@
       file: path=/var/www/.ssh owner=www-data group=www-data mode=0700 state=directory
 
 - hosts: prod
+  pre_tasks:
+    - name: Update apt
+      become: yes
+      apt:
+        cache_valid_time: 1800
+        update_cache: yes
   become: true
   roles:
     - ubuntu-nginx
+    - geerlingguy.nodejs

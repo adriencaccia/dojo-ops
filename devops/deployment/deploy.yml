@@ -3,8 +3,6 @@
   become: true
   roles:
     - ansistrano.deploy
-
-- name: Include vars
-  include_vars:
-    file: "vars/prod-deploy.yaml"
-    name: vars
+  vars_files:
+    - "vars/default.yml"
+    - "vars/prod-deploy.yml"
