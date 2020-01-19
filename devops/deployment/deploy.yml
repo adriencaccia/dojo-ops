@@ -1,0 +1,10 @@
+---
+- hosts: prod
+  become: true
+  roles:
+    - ansistrano.deploy
+
+- name: Include vars
+  include_vars:
+    file: "vars/prod-deploy.yaml"
+    name: vars

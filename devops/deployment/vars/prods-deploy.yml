@@ -1,0 +1,4 @@
+vars:
+  ansistrano_deploy_via: "git"
+  ansistrano_git_repo: "git@github.com:adriencaccia/dojo-ops.git"
+  ansistrano_deploy_to: "/var/www/dojo-ops"
